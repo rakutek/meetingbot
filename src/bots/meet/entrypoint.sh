@@ -19,4 +19,4 @@ pulseaudio -D --exit-idle-time=-1
 sleep 2
 
 echo "[entrypoint] Starting bot..."
-pnpm run dev
+bun run dev

@@ -15,11 +15,11 @@ Built using:
 Install dependencies:
 
 ```bash
-pnpm install
+bun install
 ```
 
 Run the development server:
 
 ```bash
-pnpm run dev
+bun run dev
 ```

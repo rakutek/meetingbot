@@ -81,7 +81,7 @@ All infrastructure is defined using Terraform and deployed to AWS, so that you c
 - [Terraform](https://www.terraform.io/) - Infrastructure as Code
 - [AWS](https://aws.amazon.com/) - Cloud Provider
 - [Docker](https://www.docker.com/) - Containerization
-- [pnpm](https://pnpm.io/) - Package Manager
+- [Bun](https://bun.sh/) - Package Manager & Runtime
 - [GitHub Actions](https://github.com/features/actions) - CI/CD
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -104,7 +104,7 @@ To get started with MeetingBot, you'll need to set up the infrastructure and con
 - [AWS Account](https://aws.amazon.com/)
 - [Terraform](https://www.terraform.io/downloads.html)
 - [Node.js](https://nodejs.org/) (>=18.0.0)
-- [pnpm](https://pnpm.io/) (>=8.0.0)
+- [Bun](https://bun.sh/) (>=1.0.0)
 - [Docker](https://www.docker.com/) (for building bot images)
 - [AWS CLI](https://aws.amazon.com/cli/)
 
@@ -169,9 +169,7 @@ See more information in the [Terraform README](src/terraform/README.md).
 7.  **Install dependencies in each directory:**
 
     ```bash
-    cd src/frontend && pnpm install
-    cd src/backend && pnpm install
-    cd src/bots && pnpm install
+    bun install
     ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -182,9 +180,9 @@ See more information in the [Terraform README](src/terraform/README.md).
 
 1.  **Deploy the Terraform Infrastructure:** Follow the instructions in the [Terraform README](src/terraform/README.md) to deploy the necessary AWS resources.
 
-2.  **Run the Backend:** Navigate to the `src/backend` directory and start the server using `pnpm dev`. Access the API documentation at `http://localhost:{env.PORT}/docs` (or the deployed endpoint).
+2.  **Run the Backend:** Navigate to the `src/backend` directory and start the server using `bun run dev`. Access the API documentation at `http://localhost:{env.PORT}/docs` (or the deployed endpoint).
 
-3.  **Run the Frontend:** Navigate to the `src/frontend` directory and start the development server using `pnpm dev`. Access the application at `http://localhost:3000` (or the deployed endpoint).
+3.  **Run the Frontend:** Navigate to the `src/frontend` directory and start the development server using `bun run dev`. Access the application at `http://localhost:3000` (or the deployed endpoint).
 
 4.  **Create API Keys:** Use the frontend to create API keys for authenticating your applications with the MeetingBot API.
 

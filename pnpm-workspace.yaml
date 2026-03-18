@@ -1,3 +1,0 @@
-packages:
-  # Include packages in the src directory
-  - "src/**"

@@ -1,17 +1,23 @@
 {
-  "type": "commonjs",
   "name": "meetingbot",
   "private": true,
   "version": "0.0.0",
   "engines": {
     "node": ">=18.0.0"
   },
+  "workspaces": [
+    "src/server",
+    "src/example-app",
+    "src/landing-page",
+    "src/bots",
+    "src/bots/meet",
+    "src/bots/teams",
+    "src/bots/zoom"
+  ],
   "scripts": {
-    "typecheck": "pnpm --filter \"./src/**\" run typecheck"
+    "typecheck": "bun run --filter '*' typecheck"
   },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "^18.3.3"
-    }
+  "overrides": {
+    "@types/react": "^18.3.3"
   }
-} 
+}

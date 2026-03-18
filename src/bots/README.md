@@ -20,7 +20,7 @@ These bots are integral to the MeetingBot application, ensuring seamless and aut
 src/bots/
 ├── .env.example            # Example environment template file
 ├── package.json            # Global dependencies
-├── pnpm-workspace.yaml     # Specifies sub-workspaces
+├── bun.lockb               # Lockfile (in repo root)
 ├── tsconfig.json           # Global ts configurations
 ├── jest.config.js          # Jest configuration for tests
 
@@ -33,7 +33,7 @@ src/bots/
 ├── team|zoom|meet/
 │   ├── Dockerfile          # Bot-specific docker file
 │   ├── package.json        # Bot-specific dependencies
-│   ├── pnpm-lock.yaml
+│   ├── tsconfig.json       # Bot-specific ts configurations (cont.)
 │   ├── tsconfig.json       # Bot-specific ts configurations
 │   ├── src/
 │   │   ├── bot.ts          # Platform-specific bot class
@@ -56,7 +56,7 @@ Refer to the `.env.example` file for the required environment variables. Duplica
 
 ```bash
 cd src/bots
-pnpm tsx envBotData.ts
+bunx tsx envBotData.ts
 ```
 
 ### Environment Setup
@@ -106,8 +106,8 @@ The following code is used to run the bots locally in your own environment. Bot 
 
 ```bash
 cd src/bots
-pnpm install
-pnpm run dev
+bun install
+bun run dev
 ```
 
 ## Building
@@ -120,9 +120,9 @@ Ensure that [Docker](https://www.docker.com/) is installed and properly configur
 
 ```bash
 cd src/bots
-docker build -f meet/Dockerfile -t meet .
-docker build -f teams/Dockerfile -t teams .
-docker build -f zoom/Dockerfile -t zoom .
+docker build -f src/bots/meet/Dockerfile -t meet .
+docker build -f src/bots/teams/Dockerfile -t teams .
+docker build -f src/bots/zoom/Dockerfile -t zoom .
 ```
 
 The above commands will build the three docker images of the bots.
@@ -142,5 +142,5 @@ Where `<PLATFORM>` is one of either `meet | teams | zoom`.
 If you get an strange erorr while running (eg. Browser not found at file specified), upgrade puppeteer to the latest version in the specific platform's `node_modules` folder.
 ```bash
 cd zoom
-pnpm install puppeteer@latest
+bun install puppeteer@latest
 ```

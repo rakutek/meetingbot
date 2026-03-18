@@ -18,17 +18,13 @@ jobs:
         with:
           node-version: "18"
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        run: |
-          cd src/bots
-          pnpm install
+        run: bun install
 
       - name: Run bot tests
         run: |
           cd src/bots
-          pnpm test
+          bun test

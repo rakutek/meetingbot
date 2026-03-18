@@ -234,7 +234,7 @@ resource "aws_ecs_task_definition" "server" {
       SKIP_ENV_VALIDATION          = "true"
     }
 
-    command = "cd ../server && pnpm i && pnpm db:migrate && echo 'Database migrations completed successfully'"
+    command = "cd ../server && bun install && bun run db:migrate && echo 'Database migrations completed successfully'"
   }
 }
 

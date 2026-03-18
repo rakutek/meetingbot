@@ -18,20 +18,18 @@ jobs:
         with:
           node-version: "18"
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
         run: |
           cd src/server
-          pnpm install
+          bun install
 
       # - name: Run server tests
       #   run: |
       #     cd src/server
-      #     pnpm test
+      #     bun test
       #   env:
       #     AUTH_GITHUB_ID: ${{ secrets.AUTH_GITHUB_ID }}
       #     AUTH_GITHUB_SECRET: ${{ secrets.AUTH_GITHUB_SECRET }}
@@ -50,7 +48,7 @@ jobs:
       - name: Build
         run: |
           cd src/server
-          SKIP_ENV_VALIDATION=1 pnpm run build
+          SKIP_ENV_VALIDATION=1 bun run build
         env:
           AUTH_GITHUB_ID: ${{ secrets.AUTH_GITHUB_ID }}
           AUTH_GITHUB_SECRET: ${{ secrets.AUTH_GITHUB_SECRET }}
@@ -68,9 +66,9 @@ jobs:
       # - name: Run e2e tests
       #   run: |
       #     cd src/server
-      #     pnpx playwright install-deps
-      #     pnpm exec playwright install
-      #     pnpm test:e2e
+      #     bunx playwright install-deps
+      #     bunx playwright install
+      #     bun test:e2e
       #   env:
       #     AUTH_GITHUB_ID: ${{ secrets.AUTH_GITHUB_ID }}
       #     AUTH_GITHUB_SECRET: ${{ secrets.AUTH_GITHUB_SECRET }}

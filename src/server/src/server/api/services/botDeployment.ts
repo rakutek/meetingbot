@@ -98,7 +98,7 @@ export async function deployBot({
 
     if (dev) {
       // Spawn the bot process
-      const botProcess = spawn("pnpm", ["start"], {
+      const botProcess = spawn("bun", ["run", "start"], {
         cwd: botsDir,
         env: {
           ...process.env,

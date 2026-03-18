@@ -10,7 +10,7 @@ import path from "path";
 // 1. Copy the script into envBotData.ts (this will be ignored by git)
 // 2. Fill in the <...> with the actual values
 // 3. Ensure the .env file is in this directory with *no* BOT_DATA variable
-// 4. Run the script via `pnpm tsx envBotData.ts` (this will modify your .env file)
+// 4. Run the script via `bunx tsx envBotData.ts` (this will modify your .env file)
 
 // Paste in your meeting URL here
 const url = '<MEETING_URL>';

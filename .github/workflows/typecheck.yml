@@ -18,13 +18,11 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
 
       - name: Run typecheck
-        run: pnpm --recursive run typecheck
+        run: bun run --filter '*' typecheck
