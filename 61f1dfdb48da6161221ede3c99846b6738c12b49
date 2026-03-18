@@ -1,0 +1,37 @@
+src/server/src/server/utils/s3.ts
+  fa41fcd723b59661 20-23
+src/bots/.env.example
+  fa41fcd723b59661 7-10
+src/server/.env.example
+  fa41fcd723b59661 34-36
+src/bots/src/s3.ts
+  fa41fcd723b59661 1,14-16,24-29,32,35
+docker-compose.yml
+  fa41fcd723b59661 1-40
+src/bots/tests/s3startup.test.ts
+  fa41fcd723b59661 53-71
+src/bots/src/index.ts
+  fa41fcd723b59661 38-40
+src/server/src/env.js
+  fa41fcd723b59661 46,103
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.11",
+  "base_commit_sha": "61f1dfdb48da6161221ede3c99846b6738c12b49",
+  "prompts": {
+    "fa41fcd723b59661": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c17be8e4-4dfd-48c3-97a6-96841da88f8f",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Raku Sakaguchi <rakutek12@gmail.com>",
+      "messages": [],
+      "total_additions": 98,
+      "total_deletions": 20,
+      "accepted_lines": 89,
+      "overriden_lines": 0
+    }
+  }
+}
