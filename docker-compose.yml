@@ -1,0 +1,40 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: server
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  rustfs:
+    image: rustfs/rustfs:latest
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      RUSTFS_ROOT_USER: rustfsadmin
+      RUSTFS_ROOT_PASSWORD: rustfsadmin
+    volumes:
+      - rustfs_data:/data
+    command: server /data --console-address ":9001"
+
+  init-rustfs:
+    image: amazon/aws-cli:latest
+    depends_on:
+      - rustfs
+    environment:
+      AWS_ACCESS_KEY_ID: rustfsadmin
+      AWS_SECRET_ACCESS_KEY: rustfsadmin
+    entrypoint: >
+      /bin/sh -c "
+        sleep 3 &&
+        aws --endpoint-url http://rustfs:9000 s3 mb s3://meetingbot-dev || true
+      "
+
+volumes:
+  postgres_data:
+  rustfs_data:

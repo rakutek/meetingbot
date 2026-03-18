@@ -50,6 +50,25 @@ describe('Bot S3 Startup Tests', () => {
         const result = createS3Client(undefined, undefined, undefined);
         expect(result).toBeNull();
     });
+
+    it("creates an S3 client with a custom endpoint when provided", () => {
+        const mockRegion = "us-east-1";
+        const mockAccessKeyId = "rustfsadmin";
+        const mockSecretKey = "rustfsadmin";
+        const mockEndpoint = "http://localhost:9000";
+
+        createS3Client(mockRegion, mockAccessKeyId, mockSecretKey, mockEndpoint, true);
+
+        expect(S3Client).toHaveBeenCalledWith({
+            region: mockRegion,
+            endpoint: mockEndpoint,
+            forcePathStyle: true,
+            credentials: {
+                accessKeyId: mockAccessKeyId,
+                secretAccessKey: mockSecretKey,
+            },
+        });
+    });
 });
 
 describe('S3Client Upload Tests', () => {
