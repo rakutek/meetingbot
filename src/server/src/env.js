@@ -43,6 +43,7 @@ export const env = createEnv({
       process.env.NODE_ENV === "test"
         ? z.preprocess(() => "fake_aws_region", z.string())
         : z.string(),
+    AWS_S3_ENDPOINT: z.string().url().optional(),
     ECS_TASK_DEFINITION_MEET:
       process.env.NODE_ENV === "production"
         ? z.string()
@@ -99,6 +100,7 @@ export const env = createEnv({
     AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY,
     AWS_BUCKET_NAME: process.env.AWS_BUCKET_NAME,
     AWS_REGION: process.env.AWS_REGION,
+    AWS_S3_ENDPOINT: process.env.AWS_S3_ENDPOINT,
     ECS_TASK_DEFINITION_MEET: process.env.ECS_TASK_DEFINITION_MEET,
     ECS_TASK_DEFINITION_TEAMS: process.env.ECS_TASK_DEFINITION_TEAMS,
     ECS_TASK_DEFINITION_ZOOM: process.env.ECS_TASK_DEFINITION_ZOOM,
