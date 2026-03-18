@@ -1,0 +1,65 @@
+src/bots/teams/Dockerfile
+  484ae162427fc294 6,9-11,15-17,19-20,24-25,31
+src/server/src/server/api/services/botDeployment.ts
+  484ae162427fc294 101
+.github/workflows/test.yml
+  484ae162427fc294 21-22,27,32,51,69-71
+src/server/Dockerfile
+  484ae162427fc294 7-8,10-11,13,36-37,39,45,47-51,54
+src/example-app/Dockerfile
+  484ae162427fc294 4-5,7-8,10-11,13,16
+src/bots/meet/package.json
+  484ae162427fc294 6
+src/bots/envBotDataExample.ts
+  484ae162427fc294 13
+src/bots/meet/entrypoint.sh
+  484ae162427fc294 22
+src/bots/meet/Dockerfile
+  484ae162427fc294 9-11,13-16,18,21,24-25,40-43,46-49,51,56-58
+package.json
+  484ae162427fc294 8-16,18,21
+src/bots/README.md
+  484ae162427fc294 23,36,59,109-110,123-125,145
+README.md
+  484ae162427fc294 84,107,172,183,185
+src/bots/package.json
+  484ae162427fc294 12
+src/bots/zoom/Dockerfile
+  484ae162427fc294 6,9-11,15-17,19-20,22,24-25,27,31
+src/terraform/ecs.tf
+  484ae162427fc294 237
+.github/workflows/test-bot.yml
+  484ae162427fc294 21-22,25,30
+.github/workflows/docker.yml
+  484ae162427fc294 46-47,88
+src/landing-page/README.md
+  484ae162427fc294 18,24
+src/example-app/README.md
+  484ae162427fc294 20,34
+src/server/README.md
+  484ae162427fc294 21,26,58,168
+src/server/playwright.config.ts
+  484ae162427fc294 93
+.github/workflows/typecheck.yml
+  484ae162427fc294 21-22,25,28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.11",
+  "base_commit_sha": "d7d75334bfa3fcfa062aed60159467a447dbf8c8",
+  "prompts": {
+    "484ae162427fc294": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e90c7b11-db25-40b8-9da2-60c8fd94fc31",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Raku Sakaguchi <rakutek12@gmail.com>",
+      "messages": [],
+      "total_additions": 147,
+      "total_deletions": 240,
+      "accepted_lines": 132,
+      "overriden_lines": 0
+    }
+  }
+}
